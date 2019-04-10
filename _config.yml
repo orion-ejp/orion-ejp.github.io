@@ -2,6 +2,10 @@
 plugins_dir:
   - github-pages
 
+include:
+  - _static
+
+
 collections:
   authors:
      output: true
