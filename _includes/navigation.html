@@ -2,13 +2,13 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navigation" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="/">ORION KnowledgeHub</a>
+  <a class="navbar-brand" href="{{site.baseurl}}/">ORION KnowledgeHub</a>
 
   <div class="collapse navbar-collapse" id="Navigation">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       
         {% for item in site.data.navigation %}
-        <li class="nav-item"><a href="/pages{{ item.link }}" class="nav-link" >{{ item.name }}</a></li>
+        <li class="nav-item"><a href="{{site.baseurl}}/pages{{ item.link }}" class="nav-link" >{{ item.name }}</a></li>
         {% endfor %}
       
     </ul>
