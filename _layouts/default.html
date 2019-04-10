@@ -1,0 +1,35 @@
+---
+title: home
+
+
+---
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+         
+   
+           <link rel="stylesheet" href="/assets/css/styles.css">
+           <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+           
+    
+        {% for library in site.data.libraries %}
+           <script type="text/javascript" src="/assets/js/{{ library.link }}.js"></script> 
+        {% endfor %}
+           
+</head>
+  <body>
+    {% include navigation.html %}
+    <div class="container fluid"> 
+
+    {{ content }}
+  
+  
+   </div>
+    {% include footer.html %}
+
+
+  </body>
+</html>

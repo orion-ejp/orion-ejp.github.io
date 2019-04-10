@@ -1,0 +1,29 @@
+---
+layout: default
+---
+    <div class="row">
+
+
+<h1>ORION Glossary</h1>
+
+
+
+<table class="table table-hover" id="myTable">
+    <thead>
+     
+      <tr>
+        <th scope="col"><input type="text" class="form-control" id="searchBar"onkeyup="myFunction()" placeholder="Term"></th>
+      
+      </tr>
+    </thead>
+    <tbody>
+        {% for glossar in site.data.glossaryV6 %} 
+      <tr>
+          <td><h5 class="card-title">{{ glossar.Term }}</h5>
+          <p class="card-text">{{ glossar.Definition }}</p></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</main>
+
