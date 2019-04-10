@@ -10,10 +10,9 @@ title: home
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
          
-   
-           <link rel="stylesheet" href="/assets/css/styles.css">
+           <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
         {% for library in site.data.libraries %}
-           <script type="text/javascript" src="/assets/js/{{ library.link }}.js"></script> 
+           <script type="text/javascript" src="{{site.baseurl}}/assets/js/{{ library.link }}.js"></script> 
         {% endfor %}
            
 </head>
