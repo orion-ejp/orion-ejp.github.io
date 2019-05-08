@@ -2,7 +2,7 @@
   link: /glossary.html
 - name: OH-Codex
   link: /one_health_codex.html
-- name: NGS
+- name: OH-NGS-KnowledgeHub
   link: /ngs.html
 - name: Surveillance Systems Repository
   link: /survsys.html
@@ -10,7 +10,4 @@
   link: /harmonization.html
 - name: About
   link: /about.html
-- name: Blog
-  link: /blog.html
-- name: Staff
-  link: /staff.html
+
