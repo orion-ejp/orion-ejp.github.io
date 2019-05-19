@@ -7,23 +7,56 @@ layout: default
 <h1>ORION Glossary</h1>
 
 
-
-<table class="table table-hover" id="myTable">
+<div id="glossary">
+  <table class="table table-hover table-fixed" id="myTable" >
+    <!---->  
     <thead>
-     
-      <tr>
-        <th scope="col"><input type="text" class="form-control" id="searchBar"onkeyup="myFunction()" placeholder="Term"></th>
-      
-      </tr>
-    </thead>
-    <tbody>
-        {% for glossar in site.data.glossaryV6 %} 
-      <tr>
-          <td><h5 class="card-title">{{ glossar.Term }}</h5>
-          <p class="card-text">{{ glossar.Definition }}</p></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+       
+        <tr>
+          <th scope="col"><input type="text" class="form-control" id="searchBar" onkeyup="myFunction()" placeholder="Term"></th>
+        
+        </tr>
+      </thead>
+      <tbody>
+          {% for glossar in site.data.glossaryV6 %} 
+        <tr>
+            <td><h5 class="card-title">{{ glossar.Term }}</h5>
+              <span class="badge badge-pill badge-primary">{{glossar.Sector}}</span>
+
+            <p class="card-text"><span class="badge badge-pill badge-secondary"><b>Categories:</b> {{ glossar.Category }}</span><br><br> <b>Definition:</b> <br>{{ glossar.Definition }}
+            <br>
+              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{glossar.TermID}}" >
+                View more
+              </button>
+              <div class="modal fade" id="{{glossar.TermID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"> {{ glossar.Term }}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </p></td>
+         
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+</div>
+
 </main>
+
 
