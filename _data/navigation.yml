@@ -1,7 +1,10 @@
-- name: ORION Glossary
-  link: /glossary.html
+
 - name: OH-Codex
   link: /one_health_codex.html
+- name: ORION Glossary-draft1
+  link: /glossary.html
+- name: ORION Glossary-draft2
+  link: /glossary-datacatalogue.html
 - name: OH-NGS-KnowledgeHub
   link: /ngs.html
 - name: Surveillance Systems Repository
