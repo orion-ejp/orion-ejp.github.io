@@ -6,6 +6,10 @@ layout: default
 
 <h1>ORION Glossary</h1>
 
+{% assign Sector =  site.data.Glossary_V9 | map: "Sector"| uniq  %};
+
+
+
 
 <div id="glossary">
   <table class="table table-hover table-fixed" id="myTable" >
@@ -13,22 +17,22 @@ layout: default
     <thead>
        
         <tr>
-          <th scope="col"><input type="text" class="form-control" id="searchBar" onkeyup="myFunction()" placeholder="Term"></th>
+          <th scope="col"><input type="text" class="form-control autocomplete" id="searchBar" onkeyup="myFunction()" placeholder="Term"></th>
         
         </tr>
       </thead>
       <tbody>
-          {% for glossar in site.data.glossaryV6 %} 
+          {% for glossar in site.data.Glossary_V9 %} 
         <tr>
             <td><h5 class="card-title">{{ glossar.Term }}</h5>
               <span class="badge badge-pill badge-primary">{{glossar.Sector}}</span>
 
             <p class="card-text"><span class="badge badge-pill badge-secondary"><b>Categories:</b> {{ glossar.Category }}</span><br><br> <b>Definition:</b> <br>{{ glossar.Definition }}
             <br>
-              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{glossar.TermID}}" >
+              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{glossar.Term_ID}}" >
                 View more
               </button>
-              <div class="modal fade" id="{{glossar.TermID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="{{glossar.Term_ID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -38,11 +42,82 @@ layout: default
                       </button>
                     </div>
                     <div class="modal-body">
-                      ...
+                        <p class="card-text">
+                            <span class="badge badge-pill badge-primary">{{glossar.Sector}}</span><br>
+                          <span class="badge badge-pill badge-secondary">
+                            
+                            <b>Categories:</b> {{ glossar.Category }}</span>
+                            <br>
+                            <br> 
+                            <b>Definition:</b> 
+                            <br>{{ glossar.Definition }}
+
+                            <br>
+                            <br>
+                            <!-- If customer.name = 'anonymous' -->
+                            {% if glossar.Related_terms != nil %}
+                            <br><b> Related term:</b> {{ glossar.Related_terms }}         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.Link_to_reference != nil %}
+                            <br><b> Link to reference:</b> <a href="{{ glossar.Link_to_reference }}" target="_blank" rel="noopener noreferrer">{{ glossar.Link_to_reference | truncate: 30 }}</a>         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.DOI != nil %}
+                            <br><b> DOI:</b> <a href="{{ glossar.DOI }}" target="_blank" rel="noopener noreferrer">{{ glossar.DOI }}</a>         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.PMID != nil %}
+                            <br><b> PMID:</b> {{ glossar.PMID}}         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.ISBN != nil %}
+                            <br><b> ISBN:</b> {{ glossar.ISBN}}         
+                            {% else  %} 
+                            {% endif %}
+                    
+                            {% if glossar.Reference_source != nil %}
+                            <br><b> Reference source:</b> {{ glossar.Reference_source}}         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.Publication_Title != nil %}
+                            <br><b> Publication Title:</b> {{ glossar.Publication_Title }}         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.Year != nil %}
+                            <br><b> Year:</b> {{ glossar.Year }}         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.Authors != nil %}
+                            <br><b> Authors:</b> {{ glossar.Authors }}         
+                            {% else  %} 
+                            {% endif %}
+
+                            {% if glossar.Publisher != nil %}
+                            <br><b> Publisher:</b> {{ glossar.Publisher }}         
+                            {% else  %} 
+                            {% endif %}
+                            
+                            {% if glossar.Journal != nil %}
+                            <br><b> Journal:</b> {{ glossar.Journal }}         
+                            {% else  %} 
+                            {% endif %}
+
+                            
+
+                            
+                    
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary">Download as RDF-file</button>
                     </div>
                   </div>
                 </div>
@@ -59,4 +134,8 @@ layout: default
 
 </main>
 
+<script>
+ var test =  {% assign Terms =  site.data.glossaryV6 | map: "Term"| uniq  %};;
+  console.log(test)
 
+    </script>

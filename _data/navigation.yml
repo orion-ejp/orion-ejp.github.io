@@ -1,16 +1,32 @@
 
-- name: OH-Codex
-  link: /one_health_codex.html
-- name: ORION Glossary-draft1
-  link: /glossary.html
-- name: ORION Glossary-draft2
-  link: /glossary-datacatalogue.html
-- name: OH-NGS-KnowledgeHub
-  link: /ngs.html
-- name: Surveillance Systems Repository
-  link: /survsys.html
-- name: Harmonization Infrastructure
-  link: /harmonization.html
-- name: About
-  link: /about.html
+- WP1:
+   - name: OH Codex 
+     link: /one_health_codex.html
+   - name: ORION Glossary-draft1
+     link: /glossary.html
+   - name: ORION Glossary-draft2
+     link: /glossary-datacatalogue.html
+- WP2:
+  - name: Surveillance Systems Repository
+    link: /survsys.html
+  - name: OH-NGS-KnowledgeHub
+    link: /ngs.html
+  - name: Integration report
+    link: /wp3.html
+- WP3:
+  - name: Harmonization Infrastructure
+    link: /harmonization.html
+  - name: Surveillance Systems Repository
+    link: /survsys.html
+
+
+
+
+
+
+
+
+
+
+
 

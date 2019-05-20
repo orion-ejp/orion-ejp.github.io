@@ -38,6 +38,19 @@ body {
 
      
  }
+
+ .table-fixed tbody {
+  height: 1000px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+  width:100%;
+}
+
+
+
 .jumbotron{
   border-radius:20px;
   background-color: #13699f;
@@ -97,7 +110,8 @@ body {
   }
   
   .sidebar-heading {
-    font-size: .75rem;
+    padding:5px;
+    font-size: 15px;
     text-transform: uppercase;
   }
   

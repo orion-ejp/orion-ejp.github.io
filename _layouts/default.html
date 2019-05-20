@@ -9,10 +9,12 @@ title: home
         <title>{{ page.title }}</title>
          
            <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
-        {% for library in site.data.libraries %}
-           <script type="text/javascript" src="{{site.baseurl}}/assets/js/{{ library.link }}.js"></script> 
+         
+           {% for library in site.data.libraries %}
+           <script type="text/javascript" src="{{site.baseurl}}/assets/js/{{ library.link }}"></script> 
         {% endfor %}
-        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
+        <script src="{{ "/assets/js/custom.js" | prepend: site.baseurl }}"></script>
         <style>
             .bd-placeholder-img {
               font-size: 1.125rem;
@@ -39,13 +41,42 @@ title: home
                 <a class="navbar-brand" href="{{site.baseurl}}/"><img class="d-inline-block align-top" src="/assets/img/logo.png" style="width:70px;height:auto"> ORION Knowledge Hub</a>
          <div class=" collapse " id="navbarTogglerDemo03">
             <ul class="navbar-nav ">
-            {% for item in site.data.navigation %}
-            <li class="nav-item active">
+                <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP1</span>   </h2>    
+           
+                {% for group in site.data.navigation %}
+              {% for item in group.WP1 %}
+              <li class="nav-item">
+               <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
+                 {{ item.name }}
+               </a>
+             </li>
+               {% endfor %}
+               {% endfor %}
+             
+               <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP2</span>   </h2>    
+               {% for group in site.data.navigation %}
+               {% for item in group.WP2 %}
+               <li class="nav-item">
                  <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
                    {{ item.name }}
                  </a>
                </li>
-               {% endfor %}  
+                {% endfor %}
+                {% endfor %}
+             
+                <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP3</span>   </h2>      
+    {% for group in site.data.navigation %}
+               {% for item in group.WP3 %}
+               <li class="nav-item">
+                 <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
+                   {{ item.name }}
+                 </a>
+               </li>
+                  
+                {% endfor %}
+                {% endfor %}
+                <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span><a class="nav-link" href="{{site.baseurl}}/pages/about.html">About</a></span>   </h2> 
+
             </ul>
              </div>
           </nav>

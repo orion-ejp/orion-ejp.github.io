@@ -1,5 +1,6 @@
-- link: search
-- link: all
-- link: jquery.min
-- link: bootstrap.min
-- link: popper.min
+
+- link: jquery.min.js
+- link: popper.min.js
+- link: bootstrap.min.js
+- link: search.js
+- link: all.js

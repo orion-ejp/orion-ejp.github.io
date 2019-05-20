@@ -21,20 +21,48 @@
 <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          
-          {% for item in site.data.navigation %}
-          <li class="nav-item">
+      
+       <ul class="nav flex-column">
+          <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP1</span>   </h2>    
+           
+             {% for group in site.data.navigation %}
+           {% for item in group.WP1 %}
+           <li class="nav-item">
             <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
               {{ item.name }}
             </a>
           </li>
-          {% endfor %}
-        
+            {% endfor %}
+            {% endfor %}
+          
+            <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP2</span>   </h2>    
+            {% for group in site.data.navigation %}
+            {% for item in group.WP2 %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
+                {{ item.name }}
+              </a>
+            </li>
+             {% endfor %}
+             {% endfor %}
+          
+             <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP3</span>   </h2>      
+ {% for group in site.data.navigation %}
+            {% for item in group.WP3 %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
+                {{ item.name }}
+              </a>
+            </li>
+               
+             {% endfor %}
+             {% endfor %}
+             <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span><a class="nav-link" href="{{site.baseurl}}/pages/about.html">About</a></span>   </h2> 
+            </ul>  
 
-        <!--<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">-->
+        <!---->
        
-        </ul>
+        
       </div>
     </nav>
 
