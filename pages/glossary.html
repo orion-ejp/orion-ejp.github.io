@@ -6,7 +6,7 @@ layout: default
 
 <h1>ORION Glossary</h1>
 
-{% assign Sector =  site.data.Glossary_V9 | map: "Sector"| uniq  %};
+
 
 
 
@@ -36,6 +36,8 @@ layout: default
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
+                
+                      </a>
                       <h5 class="modal-title" id="exampleModalLabel"> {{ glossar.Term }}</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -135,7 +137,24 @@ layout: default
 </main>
 
 <script>
- var test =  {% assign Terms =  site.data.glossaryV6 | map: "Term"| uniq  %};;
-  console.log(test)
+var dataset =  {{  site.data.Glossary_V9 | map: "Term" |uniq |jsonify }};
+//console.log(dataset)
 
-    </script>
+
+
+$(function () {
+
+var list = dataset
+var list = list.toString();
+var listArray = list.split(",");
+
+var availableTags = listArray;
+
+$(".autocomplete").autocomplete({
+  source: availableTags
+
+});
+});
+
+
+</script>
