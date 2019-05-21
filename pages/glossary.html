@@ -155,6 +155,15 @@ $(".autocomplete").autocomplete({
 
 });
 });
+$(document).ready(function() {
 
+  console.log(window.location.href)
+for (i = 0; i< 1000;i++){
+
+    if(window.location.href.indexOf('#'+i+'term') != -1) {
+        $('#'+i+'term').modal('show');
+      }
+}  
+});
 
 </script>
