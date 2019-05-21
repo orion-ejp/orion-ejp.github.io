@@ -1,5 +1,4 @@
 
-- link: jquery.min.js
 - link: popper.min.js
 - link: bootstrap.min.js
 - link: search.js
