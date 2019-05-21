@@ -4,12 +4,11 @@ layout: default
     <div class="row">
 
 
-<h1>ORION Glossary</h1>
+<h1>One Health EJP ORION Glossary</h1>
 
-
-
-
-
+<div class="spinner-grow text-primary loader" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
 
 <div id="glossary">
   <table class="table table-hover table-fixed" id="myTable" >
@@ -17,21 +16,30 @@ layout: default
     <thead>
        
         <tr>
-          <th scope="col"><input type="text" class="form-control autocomplete" id="searchBar" onkeyup="myFunction()" placeholder="Term"></th>
+          <th scope="col"><input type="text" class="form-control autocomplete" id="searchBar" onkeyup="myFunction()" placeholder="Search "></th>
         
         </tr>
       </thead>
       <tbody>
           {% for glossar in site.data.Glossary_V9 %} 
         <tr>
-            <td><h5 class="card-title">{{ glossar.Term }}</h5>
-              <span class="badge badge-pill badge-primary">{{glossar.Sector}}</span>
-
+            <td><h5 class="card-title">{{ glossar.Term }} </h5>
+               
+              <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span>
+            
             <p class="card-text"><span class="badge badge-pill badge-secondary"><b>Categories:</b> {{ glossar.Category }}</span><br><br> <b>Definition:</b> <br>{{ glossar.Definition }}
+            <br>
             <br>
               <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{glossar.Term_ID}}term" >
                 View more
               </button>
+              
+              
+              <button type="button" class="btn citeBtn" data-container="body" data-toggle="popover" data-placement="bottom"  data-html="true" data-content="<input class='form-control' id='copy{{ glossar.Term_ID }}' type='text' value='{{ site.url }}/pages/glossary.html#{{ glossar.Term_ID }}term'>">
+                Cite link 
+              </button>
+              
+              
               <div class="modal fade" id="{{glossar.Term_ID}}term" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
@@ -45,7 +53,7 @@ layout: default
                     </div>
                     <div class="modal-body">
                         <p class="card-text">
-                            <span class="badge badge-pill badge-primary">{{glossar.Sector}}</span><br>
+                          <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span>
                           <span class="badge badge-pill badge-secondary">
                             
                             <b>Categories:</b> {{ glossar.Category }}</span>
@@ -137,13 +145,17 @@ layout: default
 </main>
 
 <script>
+
+$(window).load(function(){
+  $(".loader").fadeOut("slow")
+});
+
+
 var dataset =  {{  site.data.Glossary_V9 | map: "Term" |uniq |jsonify }};
 //console.log(dataset)
 
-
-
 $(function () {
-
+  
 var list = dataset
 var list = list.toString();
 var listArray = list.split(",");
@@ -156,8 +168,7 @@ $(".autocomplete").autocomplete({
 });
 });
 $(document).ready(function() {
-
-  console.log(window.location.href)
+  
 for (i = 0; i< 1000;i++){
 
     if(window.location.href.indexOf('#'+i+'term') != -1) {
@@ -166,4 +177,6 @@ for (i = 0; i< 1000;i++){
 }  
 });
 
+
+ 
 </script>

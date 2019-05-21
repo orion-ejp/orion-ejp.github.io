@@ -16,3 +16,11 @@ function myFunction() {
       }       
     }
   }
+
+  $(function(){
+    $('[data-toggle="popover"]').popover();
+    
+  });
+
+ 
+

@@ -10,6 +10,27 @@
     
 }
 
+//Pills
+
+.SharedTerm{
+  background-color: #343a40; 
+  color: white;
+}
+
+.AnimalHealth{
+  background-color: rgb(54, 84, 219) ;
+  color: white;
+}
+.PublicHealth{
+  background-color: rgb(0, 143, 209);
+  color: white;
+}
+.FoodSafety{
+  background-color: #13adb3;
+  color: white;
+}
+//
+
 footer{
     margin-top: 50px;
     bottom:0;
@@ -124,8 +145,20 @@ body {
     border:none;
     color:white;
   }
+
   .btn-primary:hover{
     background-color:rgb(223, 169, 136);
+    border:none;
+    color:white;
+  }
+
+  .citeBtn{
+    background-color:#13699f;
+    border:none;
+    color:white;
+  }
+  .citeBtn:hover{
+    background-color:#3393ce;
     border:none;
     color:white;
   }
