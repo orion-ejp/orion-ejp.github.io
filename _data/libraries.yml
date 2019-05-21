@@ -1,6 +1,5 @@
 
 - link: popper.min.js 
-- link: clipboard.min.js
 - link: all.js
 - link: bootstrap.min.js
 - link: search.js
