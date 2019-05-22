@@ -187,11 +187,13 @@ $(".autocomplete").autocomplete({
 });
 });
 $(document).ready(function() {
-  
-for (i = 0; i< 1000;i++){
 
-    if(window.location.href.indexOf('#'+i+'term') != -1) {
-        $('#'+i+'term').modal('show');
+  var datasetID =  {{  site.data.Glossary_V9 | map: "UUID" |uniq |jsonify }};
+
+for (i = 0; i< datasetID.length;i++){
+
+    if(window.location.href.indexOf('#'+datasetID[i]) != -1) {
+        $('#'+datasetID[i]).modal('show');
       }
 }  
 });
