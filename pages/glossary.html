@@ -47,17 +47,17 @@ layout: default
                             {% else  %} 
                             {% endif %}
             <br>
-              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{ glossar.Term_ID }}term" >
+              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{ glossar.UUID }}" >
                 View more
               </button>
+               <a href="http://data.d4science.org/ctlg/ORIONKnowledgeHub/{{ glossar.UUID }}" target="_blank" rel="noopener noreferrer" class="btn btn-info" role="button">ORION-VRE</a>
               
-              
-              <button type="button" class="btn citeBtn" data-container="body" data-toggle="popover" data-placement="bottom"  data-html="true" data-content="<input class='form-control'  id='copy{{ glossar.Term_ID }}' type='text' value='{{ site.url }}/pages/glossary.html#{{ glossar.Term_ID }}term'>">
+              <button type="button" class="btn citeBtn" data-container="body" data-toggle="popover" data-placement="bottom"  data-html="true" data-content="<input class='form-control'  id='copy{{ glossar.UUID }}' type='text' value='{{ site.url }}/pages/glossary.html#{{ glossar.UUID }}'>">
                 Definition URL 
               </button>
               
               
-              <div class="modal fade" id="{{glossar.Term_ID}}term" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="{{glossar.UUID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -144,7 +144,9 @@ layout: default
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Download as RDF-file</button>
+                      
+                      <a href="https://aginfra.d4science.org/catalogue-aginfra?path=/dataset/{{ glossar.UUID }}.rdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" role="button">Download as RDF-file</a>
+                      
                     </div>
                   </div>
                 </div>
