@@ -29,7 +29,7 @@ layout: default
             
             <p class="card-text"> 
               <b>Sector:</b>  <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span><br>
-              {% assign categories = glossar.Category | split: "; " %}
+              {% assign categories = glossar.Category | split: ";" %}
               <b>Categories:</b>
               {% for category in categories %}
               <span class="badge badge-pill badge-secondary"> 
@@ -70,10 +70,16 @@ layout: default
                     </div>
                     <div class="modal-body">
                         <p class="card-text">
+                            <b>Sector:</b> 
                           <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span>
-                          <span class="badge badge-pill badge-secondary">
+                          <br>
                             
-                            <b>Categories:</b> {{ glossar.Category }}</span>
+                            <b>Categories:</b>
+                            {% for category in categories %}
+                            <span class="badge badge-pill badge-secondary"> 
+                                {{ category }}
+                              </span>
+                            {% endfor %}
                             <br>
                             <br> 
                             <b>Definition:</b> 
