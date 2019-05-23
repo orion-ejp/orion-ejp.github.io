@@ -47,6 +47,7 @@ layout: default
                             {% else  %} 
                             {% endif %}
             <br>
+           
               <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{ glossar.UUID }}" >
                 View more
               </button>
@@ -143,7 +144,27 @@ layout: default
                             {% else  %} 
                             {% endif %}
 
+                            {% if glossar.relatedTermIDs != nil %}
+                            <div class="dropdown">
+                              <a class="btn btn-info dropdown-toggle"  style="color: white"role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Related Terms
+                              </a>        
+                              {% assign relatedTermIDs = glossar.relatedTermIDs | split: ";" %}
+                              <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                              {% for relatedTermID in relatedTermIDs %}
+                              <a class="dropdown-item" href="{{ site.url }}/pages/glossary.html#{{ relatedTermID | strip }}" target="_blank" rel="noopener noreferrer">{{ relatedTermID | strip  }}</a>
+                              {% endfor %} 
+                                                   
+                              </div>
+                            </div>
                             
+                            {% else  %} 
+                            {% endif %}
+                            
+                            <br>
+                            
+                            
+                             
 
                             
                     
