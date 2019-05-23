@@ -1,14 +1,18 @@
 ---
 layout: default
 ---
-    <div class="row">
+    
+<div class="row">
+
+  <h1>One Health EJP Glossary</h1>
+  <div class="spinner-grow text-primary loader" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
 
 
-<h1>One Health EJP Glossary</h1>
 
-<div class="spinner-grow text-primary loader" role="status">
-  <span class="sr-only">Loading...</span>
-</div>
+
+
 
 <div id="glossary">
   <table class="table table-hover table-fixed" id="myTable" >
@@ -47,17 +51,29 @@ layout: default
                             {% else  %} 
                             {% endif %}
             <br>
-           
-              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#{{ glossar.UUID }}" >
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+              <button class="btn btn-primary" type="button" style="height:34px; margin-right:9px" data-toggle="modal" data-target="#{{ glossar.UUID }}" >
                 View more
               </button>
-               <a href="http://data.d4science.org/ctlg/ORIONKnowledgeHub/{{ glossar.UUID }}" target="_blank" rel="noopener noreferrer" class="btn btn-info" role="button">ORION-VRE</a>
+               <a href="http://data.d4science.org/ctlg/ORIONKnowledgeHub/{{ glossar.UUID }}" style="height:34px; margin-right:9px" target="_blank" rel="noopener noreferrer" class="btn btn-info" role="button">ORION-VRE</a>
               
-              <button type="button" class="btn citeBtn" data-container="body" data-toggle="popover" data-placement="bottom"  data-html="true" data-content="<input class='form-control'  id='copy{{ glossar.UUID }}' type='text' value='{{ site.url }}/pages/glossary.html#{{ glossar.UUID }}'>">
-                Definition URL 
-              </button>
-              
-              
+           
+              <div class="dropdown" style="max-width: 500px;">
+                <button class="btn citeBtn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    Definition URL 
+                </button>
+                <form class="px-4 py-3">
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                  <div class="form-group mb-3" style="margin: 10px; width:400px;">
+                    <input class='form-control'  id='copy{{ glossar.UUID }}' type='text' value='{{ site.url }}/pages/glossary.html#{{ glossar.UUID }}'>
+                    <small id="inputHelp" class="form-text text-muted">Click in the field and press Ctrl + A and Ctrl + C to copy the link</small>
+                  </div>
+                </form>  
+                </div>
+                
+              </div>
+
+            </div>
               <div class="modal fade" id="{{glossar.UUID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">

@@ -2,12 +2,58 @@
 @import "bootstrap/bootstrap";
 @import "custom/glossary";
 
+$enable-responsive-font-sizes: true;
 .current{
     color: green;
 }
 .container{
     height: 100%;
     
+}
+
+@media only screen and (max-width: 360px) {
+
+  body { 
+     font-size: 5vw; 
+  }
+  .navbar-brand{
+    font-size: 5vw;
+  }
+.logo{
+  visibility: hidden;
+}
+
+}
+@media only screen and (max-width: 320px) {
+
+  body { 
+     font-size: 5vw; 
+  }
+  .navbar-brand{
+    font-size: 5vw;
+  }
+.logo{
+  visibility: hidden;
+  
+}
+.navbar-toggler{
+height:30;
+width:46
+}
+.navbar-toggler-icon{
+  height:20px;
+  width:20px
+}
+.dropdown-menu{
+  width: 100%;
+}
+}
+
+@media only screen and (max-width: 414px) {
+
+.dropdown-menu{
+  width: 100%;
+}
 }
 
 //Pills
@@ -30,7 +76,9 @@
   color: white;
 }
 //
-
+#glossary{
+  width:100%;
+}
 footer{
     margin-top: 50px;
     bottom:0;
@@ -171,6 +219,7 @@ body {
   }
   
   @media (min-width: 768px) {
+
     [role="main"] {
       padding-top: 48px; /* Space for fixed navbar */
     }
@@ -231,3 +280,4 @@ body {
   max-height:400px;
   overflow-y:auto;
 }
+
