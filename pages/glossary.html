@@ -1,47 +1,33 @@
 ---
 layout: default
----
-    
+---  
 <div class="row">
-
-  <h1>One Health EJP Glossary</h1>
+    <div itemscope itemtype="http://schema.org/DefinedTermSet">
+  <h1 itemprop="name">One Health EJP Glossary</h1>
   <div class="spinner-grow text-primary loader" role="status">
     <span class="sr-only">Loading...</span>
   </div>
-
-
-
-
-
-
 <div id="glossary">
   <table class="table table-hover table-fixed" id="myTable" >
-    <!---->  
     <thead>
-       
         <tr>
           <th scope="col"><input type="text" class="form-control autocomplete" id="searchBar" onkeyup="myFunction()" placeholder="Search "></th>
-        
         </tr>
       </thead>
       <tbody>
           {% for glossar in site.data.Glossary_V9 %} 
         <tr>
-            <td><h5 class="card-title"><b>{{ glossar.Term }} </b> </h5>
-               
-             
-            
+            <div itemscope itemtype="http://schema.org/DefinedTerm">
+            <td><h5 itemprop="name" class="card-title"><b>{{ glossar.Term }}</b></h5>      
             <p class="card-text"> 
-              <b>Sector:</b>  <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span><br>
+              <b>Sector:</b> <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span><br>
               {% assign categories = glossar.Category | split: ";" %}
               <b>Categories:</b>
               {% for category in categories %}
               <span class="badge badge-pill badge-secondary"> 
                   {{ category }}
                 </span>
-              {% endfor %}
- 
-              
+              {% endfor %}             
               <br>
               <br> 
               <b>Definition:</b> <br>{{ glossar.Definition }}
@@ -55,9 +41,7 @@ layout: default
               <button class="btn btn-primary" type="button" style="height:34px; margin-right:9px" data-toggle="modal" data-target="#{{ glossar.UUID }}" >
                 View more
               </button>
-               <a href="http://data.d4science.org/ctlg/ORIONKnowledgeHub/{{ glossar.UUID }}" style="height:34px; margin-right:9px" target="_blank" rel="noopener noreferrer" class="btn btn-info" role="button">ORION-VRE</a>
-              
-           
+               <a href="http://data.d4science.org/ctlg/ORIONKnowledgeHub/{{ glossar.UUID }}" style="height:34px; margin-right:9px" target="_blank" rel="noopener noreferrer" class="btn btn-info" role="button">ORION-VRE</a>   
               <div class="dropdown" style="max-width: 500px;">
                 <button class="btn citeBtn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     Definition URL 
@@ -69,17 +53,13 @@ layout: default
                     <small id="inputHelp" class="form-text text-muted">Click in the field and press Ctrl + A and Ctrl + C to copy the link</small>
                   </div>
                 </form>  
-                </div>
-                
+                </div>      
               </div>
-
             </div>
               <div class="modal fade" id="{{glossar.UUID}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                
-                      </a>
                       <h5 class="modal-title" id="exampleModalLabel"> {{ glossar.Term }}</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -90,7 +70,6 @@ layout: default
                             <b>Sector:</b> 
                           <span class="badge badge-pill  {{ glossar.Sector | replace: ' ', ''}}" >{{glossar.Sector}}</span>
                           <br>
-                            
                             <b>Categories:</b>
                             {% for category in categories %}
                             <span class="badge badge-pill badge-secondary"> 
@@ -101,7 +80,6 @@ layout: default
                             <br> 
                             <b>Definition:</b> 
                             <br>{{ glossar.Definition }}
-
                             <br>
                             <br>
                             <!-- If customer.name = 'anonymous' -->
@@ -109,57 +87,46 @@ layout: default
                             <br><b> Related term:</b> {{ glossar.Related_terms }}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.Link_to_reference != nil %}
                             <br><b> Link to reference:</b> <a href="{{ glossar.Link_to_reference }}" target="_blank" rel="noopener noreferrer">{{ glossar.Link_to_reference | truncate: 30 }}</a>         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.DOI != nil %}
                             <br><b> DOI:</b> <a href="{{ glossar.DOI }}" target="_blank" rel="noopener noreferrer">{{ glossar.DOI }}</a>         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.PMID != nil %}
                             <br><b> PMID:</b> {{ glossar.PMID}}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.ISBN != nil %}
                             <br><b> ISBN:</b> {{ glossar.ISBN}}         
                             {% else  %} 
                             {% endif %}
-                    
                             {% if glossar.Reference_source != nil %}
                             <br><b> Reference source:</b> {{ glossar.Reference_source}}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.Publication_Title != nil %}
                             <br><b> Publication Title:</b> {{ glossar.Publication_Title }}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.Year != nil %}
                             <br><b> Year:</b> {{ glossar.Year }}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.Authors != nil %}
                             <br><b> Authors:</b> {{ glossar.Authors }}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.Publisher != nil %}
                             <br><b> Publisher:</b> {{ glossar.Publisher }}         
                             {% else  %} 
-                            {% endif %}
-                            
+                            {% endif %}                            
                             {% if glossar.Journal != nil %}
                             <br><b> Journal:</b> {{ glossar.Journal }}         
                             {% else  %} 
                             {% endif %}
-
                             {% if glossar.relatedTermIDs != nil %}
                             <div class="dropdown">
                               <a class="btn btn-info dropdown-toggle"  style="color: white"role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -169,78 +136,24 @@ layout: default
                               <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
                               {% for relatedTermID in relatedTermIDs %}
                               <a class="dropdown-item" href="{{ site.url }}/pages/glossary.html#{{ relatedTermID | strip }}" target="_blank" rel="noopener noreferrer">{{ relatedTermID | strip  }}</a>
-                              {% endfor %} 
-                                                   
+                              {% endfor %}                                                   
                               </div>
-                            </div>
-                            
+                            </div>                           
                             {% else  %} 
-                            {% endif %}
-                            
+                            {% endif %}                            
                             <br>
-                            
-                            
-                             
-
-                            
-                    
-                    </div>
+                   </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                      
                       <a href="https://aginfra.d4science.org/catalogue-aginfra?path=/dataset/{{ glossar.UUID }}.rdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" role="button">Download as RDF-file</a>
-                      
                     </div>
                   </div>
                 </div>
               </div>
             </p></td>
-         
           </tr>
         {% endfor %}
       </tbody>
     </table>
-
-
 </div>
-
 </main>
-
-<script>
-
-$(window).load(function(){
-  $(".loader").fadeOut("slow")
-});
-
-
-var dataset =  {{  site.data.Glossary_V9 | map: "Term" |uniq |jsonify }};
-//console.log(dataset)
-
-$(function () {
-  
-var list = dataset
-var list = list.toString();
-var listArray = list.split(",");
-
-var availableTags = listArray;
-
-$(".autocomplete").autocomplete({
-  source: availableTags
-
-});
-});
-$(document).ready(function() {
-
-  var datasetID =  {{  site.data.Glossary_V9 | map: "UUID" |uniq |jsonify }};
-
-for (i = 0; i< datasetID.length;i++){
-
-    if(window.location.href.indexOf('#'+datasetID[i]) != -1) {
-        $('#'+datasetID[i]).modal('show');
-      }
-}  
-});
-
-
- 
-</script>
