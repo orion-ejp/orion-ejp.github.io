@@ -3,122 +3,17 @@ title: home
 ---
 
 <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="shortcut icon" href="https://yxf2vsag19-flywheel.netdna-ssl.com/wp-content/uploads/2018/06/favicon-32x32.png">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-        <meta name="description" content="ORION-Knowledge">
-        <meta name="author" content="Taras Guenther">
-        <meta name="generator" content="Jekyll v3.8.5">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>   
-           <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
-         
-           {% for library in site.data.libraries %}
-           <script type="text/javascript" src="{{site.baseurl}}/assets/js/{{ library.link }}"></script> 
-        {% endfor %}
-        
-        
-     
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/custom.js" ></script>
-        <style>
-            .bd-placeholder-img {
-              font-size: 1.125rem;
-              text-anchor: middle;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              user-select: none;
-            }
-      
-            @media (min-width: 768px) {
-              .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-              }
-            }
-          </style>
-        
-</head>
-  <body>
-      <nav class="navbar navbar-expand-md fixed-top navbar-dark flex-md-nowrap p-0 shadow">
-       
-           
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-          
-            
-                  <a class="navbar-brand d-flex" href="{{site.baseurl}}/" ><img class="d-inline-block align-top img-fluid logo"  src="/assets/img/logo.png" style="width:70px; height:50%"> ORION Knowledge Hub</a>
-
-              
-               
-          
-         
-                
-         <div class=" collapse " id="navbarTogglerDemo03">
-            <ul class="navbar-nav ">
-                <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP1</span>   </h2>    
-           
-                {% for group in site.data.navigation %}
-              {% for item in group.WP1 %}
-              <li class="nav-item">
-               <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
-                 {{ item.name }}
-               </a>
-             </li>
-               {% endfor %}
-               {% endfor %}
-             
-               <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP2</span>   </h2>    
-               {% for group in site.data.navigation %}
-               {% for item in group.WP2 %}
-               <li class="nav-item">
-                 <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
-                   {{ item.name }}
-                 </a>
-               </li>
-                {% endfor %}
-                {% endfor %}
-             
-                <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP3</span>   </h2>      
-    {% for group in site.data.navigation %}
-               {% for item in group.WP3 %}
-               <li class="nav-item">
-                 <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
-                   {{ item.name }}
-                 </a>
-               </li>
-                  
-                {% endfor %}
-                {% endfor %}
-                <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span><a class="nav-link" href="{{site.baseurl}}/pages/about.html">About</a></span>   </h2> 
-
-            </ul>
-             </div>
-            
-          </nav>
-       
-       <div class="container fluid">  
-
-      {% include navigation.html%}
-     
-         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-         
-
-    {{ content }}
-            
-    
-   </div>
-   
-</main>
-  
-</div>
-  
-{% include footer.html %}  
-
-  </body>
-
- 
+<html lang="eng">
+{% include head.html %}
+<body>
+  {% include sidebar.html %}
+  <div class="container fluid">
+    {% include navigation.html %}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      {{ content }}
+  </div>
+  </main>
+  </div>
+  {% include footer.html %}
+</body>
 </html>

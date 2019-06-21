@@ -16,8 +16,6 @@
     </ul>
   </div>
 </nav>-->
-
-
 <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
@@ -47,7 +45,7 @@
              {% endfor %}
           
              <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span>WP3</span>   </h2>      
- {% for group in site.data.navigation %}
+            {% for group in site.data.navigation %}
             {% for item in group.WP3 %}
             <li class="nav-item">
               <a class="nav-link" href="{{site.baseurl}}/pages{{ item.link }}">
@@ -58,14 +56,6 @@
              {% endfor %}
              {% endfor %}
              <h2 class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 mb-1 text-muted"> <span><a class="nav-link" href="{{site.baseurl}}/pages/about.html">About</a></span>   </h2> 
-            </ul>  
-
-        <!---->
-       
-        
+            </ul>   
       </div>
     </nav>
-
-
-
-
