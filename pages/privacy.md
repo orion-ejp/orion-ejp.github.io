@@ -6,11 +6,11 @@ title: Privacy
 
 ## I. Use of data
 
-Users of the ORION_knowledge Hub are hereby informed in accordance with the valid German data protection provisions that any person-specific data given on this website on an expressly voluntary basis (title, name, address, e-mail address, date of birth, personal photos etc) will be electronically stored, processed and utilised solely for the purpose for which the user provided them, unless consent for use in another form has been granted.
+Users of the ORION Knowledge Hub are hereby informed in accordance with the valid German data protection provisions that any person-specific data given on this website on an expressly voluntary basis (title, name, address, e-mail address, date of birth, personal photos etc) will be electronically stored, processed and utilised solely for the purpose for which the user provided them, unless consent for use in another form has been granted.
 
 ## II. Automatic data recording
 
-We do not record any type of data on our ORION-Knowledge Hub website.
+We do not record any type of data on our ORION Knowledge Hub website.
 This may change during the project.
 In case of automatic recording we would only store anonymous data separately from any person-specific data you may have given and do not allow any conclusions regarding a specific person.
 

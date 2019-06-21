@@ -12,7 +12,7 @@ However, we do not assume any guarantee for their completeness.
 We are also not responsible for any external contents to which we make reference.
 
 ## Content
-The content of the ORION Knowledge-Hub represents the views of the Authors of the ORION Knowledge Hub only and is in their sole responsibility; it cannot be considered to reflect the views of the European Commission and/or any other body of the European Union. The European Commission and the Agency do not accept any responsibility for use that may be made of the information it contains
+The content of the ORION Knowledge Hub represents the views of the Authors of the ORION Knowledge Hub only and is in their sole responsibility; it cannot be considered to reflect the views of the European Commission and/or any other body of the European Union. The European Commission and the Agency do not accept any responsibility for use that may be made of the information it contains
 
 ## Funding
 
@@ -20,7 +20,7 @@ EJP-ORION has received funding from the European Union’s Horizon 2020 research
 
 ## More Information and Contact
 
-You will find more detailed Information and Contact to the ORION project on the official EJP-Website: (https://onehealthejp.eu/projects/jip1-orion/)[https://onehealthejp.eu/projects/jip1-orion/]
+You will find more detailed Information and Contact to the ORION project on the official EJP-Website: [https://onehealthejp.eu/projects/jip1-orion/](https://onehealthejp.eu/projects/jip1-orion/)
 
 # Services and technologies we use
 
