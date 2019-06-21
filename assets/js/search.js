@@ -1,3 +1,10 @@
+---
+layout: null
+---
+
+
+
+
 function myFunction() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchBar");
@@ -17,6 +24,10 @@ function myFunction() {
     }
   }
 
+  $(window).load(function(){
+    $(".loader").fadeOut("slow")
+  });
+
   $(function(){
     $('[data-toggle="popover"]').popover({
       html: true
@@ -24,3 +35,31 @@ function myFunction() {
     
   });
 
+
+  var dataset =  {{  site.data.Glossary_V9 | map: "Term" |uniq |jsonify }};
+//console.log(dataset)
+
+$(function () {
+  
+var list = dataset
+var list = list.toString();
+var listArray = list.split(",");
+
+var availableTags = listArray;
+
+$(".autocomplete").autocomplete({
+  source: availableTags
+
+});
+});
+$(document).ready(function() {
+
+  var datasetID =  {{  site.data.Glossary_V9 | map: "UUID" |uniq |jsonify }};
+
+for (i = 0; i< datasetID.length;i++){
+
+    if(window.location.href.indexOf('#'+datasetID[i]) != -1) {
+        $('#'+datasetID[i]).modal('show');
+      }
+}  
+});
