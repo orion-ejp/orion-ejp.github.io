@@ -4,6 +4,7 @@ plugins_dir:
 
 plugins:  
   - jekyll-octicons
+  - jekyll-minifier
 
   
 collections:
